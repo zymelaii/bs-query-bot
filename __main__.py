@@ -236,7 +236,7 @@ def query_me(*args, **kwargs):
         if not already_bind:
             return f'账号暂未关联，请输入 {bs.PREFIX}help 查询帮助信息'
         opt_uid = bindings[sender]
-    if (uid := args[0]).isdigit():
+    elif (uid := args[0]).isdigit():
         if not BSAPI.exists(id=uid):
             return '非法 UID'
         opt_uid = uid
